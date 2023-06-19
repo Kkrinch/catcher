@@ -26,7 +26,7 @@ void Setup()
 
 void Draw()
 {
-    system("cls");
+    system("cls"); // Обновление екрана (Каждое движение)
     for (int i = 0; i < width + 2; i++)
         cout << "#";
     cout << endl;
@@ -39,12 +39,12 @@ void Draw()
                 cout << "#";
             if (i == fruitY && j == fruitX)
             {
-                // Изменяем цвет фрукта на желтый
+                // Изменяем цвет фрукта на желтый (ANSI)
                 cout << "\x1b[33mF\x1b[0m";
             }
             else if (i == height - 1 && j == catcherX)
             {
-                // Изменяем цвет кетчера на зеленый
+                // Изменяем цвет кетчера на зеленый (ANSI)
                 cout << "\x1b[32mC\x1b[0m";
             }
             else
@@ -63,9 +63,9 @@ void Draw()
 
 void Input()
 {
-    if (_kbhit())
+    if (_kbhit()) 
     {
-        switch (_getch())
+        switch (_getch()) 
         {
             case 'a':
                 if (catcherX > 0)
@@ -119,7 +119,7 @@ bool CheckRestart()
 
 int main()
 {
-    srand(time(0));
+    srand(time(0)); //  Генератор случайного место нахождения фруктов.
     bool restart = true;
 
     while (restart)
@@ -128,7 +128,7 @@ int main()
         ShowMenu();
         char menuChoice = _getch();
 
-        if (menuChoice == 'x' || menuChoice == 'X')
+        if (menuChoice == 'x' || menuChoice == 'X') 
         {
             restart = false;
             continue;
