@@ -12,7 +12,6 @@ const int height = 20;
 int initialSpeed = 200;  // Начальная скорость падения фруктов (в миллисекундах)
 bool gameOver;
 int catcherX, fruitX, fruitY, score, speed;
-bool fruitEaten = false;
 
 void Setup();
 
